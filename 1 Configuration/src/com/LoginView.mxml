@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Panel xmlns:fx="http://ns.adobe.com/mxml/2009"
+		 xmlns:s="library://ns.adobe.com/flex/spark"
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 width="400"
+		 height="300"
+		 title="Login View"
+		 xmlns:parsley="http://www.spicefactory.org/parsley">
+	<fx:Declarations>
+		<parsley:Configure/>
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import com.AppDataModel;
+
+			[Bindable]
+			[Inject]
+			public var pm:LoginViewPM;                   
+			
+			[Bindable]
+			[Inject]
+			public var model:AppDataModel;
+		]]>
+	</fx:Script>
+	<s:layout>
+		<s:VerticalLayout paddingLeft="10" paddingRight="10" paddingTop="10" gap="10" />
+	</s:layout>
+
+	<s:HGroup>
+		<s:Label text="LoginViewPM :" width="110" textAlign="right" fontWeight="bold" />
+		<s:Label text="{pm.title}" />
+	</s:HGroup>	
+	
+	<s:HGroup>
+		<s:Label text="AppDataModel :" width="110" textAlign="right" fontWeight="bold" />
+		<s:Label text="{model.title}" />
+	</s:HGroup>	
+</s:Panel>

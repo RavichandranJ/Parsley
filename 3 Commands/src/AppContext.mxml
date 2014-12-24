@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parsley:Object xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    xmlns:parsley="http://www.spicefactory.org/parsley" xmlns:com="com.*">
+    <fx:Script>
+        <![CDATA[
+			import com.SimpleCommand;
+			import com.SimpleEvent;
+			import com.View1PM;
+        ]]>
+    </fx:Script>
+    <fx:Declarations>
+        <com:View1PM />
+		<com:View2PM />		
+		
+		<parsley:Object type="{SimpleCommand}">
+			<parsley:MessageHandler method="execute" selector="{SimpleEvent.GET_BOOK_LIST}" />				
+		</parsley:Object>
+    </fx:Declarations>
+</parsley:Object>

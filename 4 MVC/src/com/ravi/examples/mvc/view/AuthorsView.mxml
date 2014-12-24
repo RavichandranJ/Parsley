@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Panel xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    xmlns:parsley="http://www.spicefactory.org/parsley"
+    title="Authors">
+    <fx:Declarations>
+        <parsley:Configure/>
+    </fx:Declarations>
+    <fx:Script>
+        <![CDATA[
+            import com.ravi.examples.mvc.model.AppModuleLocator;
+
+            [Bindable]
+            [Inject]
+            public var pm:AuthorsViewPM;
+
+            [Bindable]
+            [Inject]
+            public var model:AppModuleLocator;
+        ]]>
+    </fx:Script>
+    <s:List 
+        left="10" right="10" top="10" bottom="10"
+        dataProvider="{model.authorList}"
+		alternatingItemColors="['0xF6F6F6', '0xFFFFFF']"
+        />
+</s:Panel>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:HGroup 
+    width="100%" height="100%"
+    paddingBottom="10"
+    paddingLeft="10"
+    paddingRight="10"
+    paddingTop="10"
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    xmlns:view="com.ravi.examples.mvc.view.*"
+    xmlns:parsley="http://www.spicefactory.org/parsley">
+
+    <fx:Script>
+        <![CDATA[
+            public var pm:HomeViewPM;
+
+            protected function init():void
+            {
+                pm.init();
+            }
+        ]]>
+    </fx:Script>
+
+    <fx:Declarations>
+        <parsley:FastInject property="pm"
+            type="{HomeViewPM}"
+            injectionComplete="init()">
+        </parsley:FastInject>
+    </fx:Declarations>
+    <view:AuthorsView 
+        width="200" height="100%"
+        title="Authors"/>
+
+    <view:BooksView 
+        width="100%" height="100%"
+        title="Books"/>
+
+</s:HGroup>

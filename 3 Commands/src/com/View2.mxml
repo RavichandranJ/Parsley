@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Panel 
+    width="400" height="300"
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    xmlns:parsley="http://www.spicefactory.org/parsley"
+	title="{pm.title}"
+	>
+    <fx:Declarations>
+        <parsley:Configure/>
+    </fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			
+			[Bindable]
+			[Inject]
+			public var pm:View2PM;
+		]]>
+	</fx:Script>
+</s:Panel>

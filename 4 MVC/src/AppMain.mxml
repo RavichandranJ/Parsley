@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    xmlns:parsley="http://www.spicefactory.org/parsley"
+    xmlns:view="com.ravi.examples.mvc.view.*"
+    xmlns:utils="com.ravi.examples.mvc.utils.*">
+    <fx:Script>
+        <![CDATA[
+            import mx.logging.Log;
+            import mx.logging.LogEventLevel;
+        ]]>
+    </fx:Script>
+
+    <fx:Declarations>
+        <parsley:ContextBuilder config="{AppContext}"/>
+        <utils:EncriptApplicationLog filters="com.ravi.*"
+            includeDate="true"
+            includeTime="true"
+            includeLevel="true"
+            includeCategory="true"
+            level="{LogEventLevel.ALL}"/>
+    </fx:Declarations>
+    <s:Label 
+        x="10" y="30"
+        fontSize="32"
+        fontWeight="bold"
+        text="Parsley - MVC Framework"/>
+    <view:HomeView y="80"/>
+</s:WindowedApplication>

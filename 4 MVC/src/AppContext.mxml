@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parsley:Object xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    xmlns:parsley="http://www.spicefactory.org/parsley"
+    xmlns:com="com.*"
+    xmlns:view="com.ravi.examples.mvc.view.*"
+    xmlns:delegate="com.ravi.examples.mvc.delegate.*"
+    xmlns:commands="com.ravi.examples.mvc.commands.*"
+    xmlns:model="com.ravi.examples.mvc.model.*">
+    <fx:Script>
+        <![CDATA[
+            import com.ravi.examples.mvc.commands.GetBookListCommand;
+            import com.ravi.examples.mvc.events.BooksEvent;
+        ]]>
+    </fx:Script>
+    <fx:Declarations>
+
+		<!--	Business	-->
+		<delegate:CommonDelegate/>
+		
+		
+		<!--	Model -->
+        <model:AppModuleLocator/>
+
+
+        <!-- 	Views	-->
+		<view:AuthorsViewPM/>
+		<view:BooksViewPM/>        
+        <view:HomeViewPM/>        
+
+        <!--	Commands	-->
+        <parsley:Object type="{GetBookListCommand}">
+            <parsley:MessageHandler method="execute"
+                selector="{BooksEvent.GET_BOOK_LIST}"/>
+		</parsley:Object>
+
+
+    </fx:Declarations>
+</parsley:Object>
